@@ -15,5 +15,13 @@
     "nunjucks": "^3.1.3",
     "pg": "^7.4.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aGravitous/express-lunchly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aGravitous/express-lunchly/issues"
+  },
+  "homepage": "https://github.com/aGravitous/express-lunchly#readme",
   "description": ""
 }
