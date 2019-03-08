@@ -36,9 +36,9 @@ class Customer {
   }
 
   /** method for getting a full name => `${firstnName} ${lastName}` */
+
   get fullName() {
-    this.taco = `${this.firstName} ${this.lastName}`
-    return this.taco;
+    return `${this.firstName} ${this.lastName}`;
   }
 
   /** find all customers. */
