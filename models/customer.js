@@ -35,6 +35,12 @@ class Customer {
     return this._phone;
   }
 
+  /** method for getting a full name => `${firstnName} ${lastName}` */
+  get fullName() {
+    this.taco = `${this.firstName} ${this.lastName}`
+    return this.taco;
+  }
+
   /** find all customers. */
 
   static async all() {
