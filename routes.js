@@ -56,6 +56,20 @@ router.post("/add/", async function (req, res, next) {
 });
 
 
+router.get("/search/", async function (req, res, next) {
+  console.log("req.query", req.query);
+  debugger;
+  try {
+    const name = req.query.search
+    const customers = await Customer.getByName(name);
+
+    res.render("customer_list.html", {customers, name});
+  }
+  catch (err) {
+    return next(err);
+  }
+});
+
 /** Show a customer, given their ID. */
 
 router.get("/:id/", async function (req, res, next) {

@@ -103,6 +103,33 @@ class Customer {
           [this.firstName, this.lastName, this.phone, this.notes, this.id]);
     }
   }
+
+  /** get customers by name */
+
+  static async getByName(name) {
+    console.log("hello, i've made it into the getByName method!")
+
+    const results = await db.query(
+          `SELECT id, 
+         first_name AS "firstName",  
+         last_name AS "lastName", 
+         phone, 
+         notes 
+        FROM customers WHERE first_name = $1`,
+        [name]
+    );
+
+    const customers = results.rows;
+
+    if (customers === undefined) {
+      const err = new Error(`No such customer: ${name}`);
+      err.status = 404;
+      throw err;
+    }
+    
+    return customers.map(c => new Customer(c))
+  }
+  
 }
 
 
