@@ -57,8 +57,6 @@ router.post("/add/", async function (req, res, next) {
 
 
 router.get("/search/", async function (req, res, next) {
-  console.log("req.query", req.query);
-  debugger;
   try {
     const name = req.query.search
     const customers = await Customer.getByName(name);
